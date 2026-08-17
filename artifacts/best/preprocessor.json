@@ -1,0 +1,9 @@
+{
+  "fit_id_sha256": "2e085d916915d28bc1326172a17712eb2836ef51acccc96b30be189a1858e7d1",
+  "fit_rows": 10800,
+  "input_dimension": 512,
+  "kind": "standard",
+  "l2_normalization": false,
+  "pca_output_dimension": 287,
+  "pca_requested_variance": 0.98
+}

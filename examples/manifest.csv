@@ -1,0 +1,5 @@
+id,path,label,split
+normal_0001,audio/normal_0001.wav,1,train
+normal_0002,audio/normal_0002.wav,1,train
+normal_1001,audio/normal_1001.wav,1,validation
+replay_1001,audio/replay_1001.wav,0,validation

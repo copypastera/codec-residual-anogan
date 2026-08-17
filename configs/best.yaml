@@ -1,0 +1,52 @@
+run:
+  name: codec_residual_anogan
+  output_dir: runs/codec_residual_anogan
+  seed: 42
+
+data:
+  feature_directory: data/features
+  train_splits:
+    - train
+  validation_split: validation
+  normal_label: 1
+
+preprocessing:
+  type: standard
+  pca_dim: 0.98
+
+model:
+  architecture: conv_baseline
+  latent_dim: 100
+  base_channels: 16
+  spectral_norm: true
+
+training:
+  gan_type: bce
+  epochs: 100
+  batch_size: 128
+  generator_learning_rate: 0.0002
+  discriminator_learning_rate: 0.0002
+  adam_betas: [0.5, 0.999]
+  learning_rate_decay: 1.0
+  early_stopping_patience: 15
+  keep_top_k_checkpoints: 10
+  gradient_clip: 0.0
+  label_smoothing: 0.0
+
+inference:
+  latent_optimizer: adam
+  latent_learning_rate: 0.01
+  latent_optimization_steps: 100
+  latent_restarts: 1
+  batch_size: 512
+
+anomaly_score:
+  reconstruction_loss: l1
+  reconstruction_weight: 0.5
+  discriminator_feature_weight: 0.5
+  component_normalization: none
+
+runtime:
+  device: cuda:0
+  memory_fraction: 0.85
+  deterministic_inference: false

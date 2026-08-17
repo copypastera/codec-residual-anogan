@@ -1,0 +1,9 @@
+# Python 3.8 reference environment. For CUDA, prefer environment.yml.
+joblib==1.1.1
+numpy==1.21.6
+PyYAML==6.0.1
+scikit-learn==0.24.2
+scipy==1.7.3
+soundfile==0.12.1
+pyworld==0.3.4
+torch==1.10.2

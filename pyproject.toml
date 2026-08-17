@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codec-residual-anogan"
+version = "0.1.0"
+description = "Dataset-agnostic codec-residual AnoGAN replay detection"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "joblib>=1.1",
+  "numpy>=1.21",
+  "PyYAML>=6.0",
+  "scikit-learn>=0.24",
+  "scipy>=1.7",
+  "torch>=1.10",
+]
+
+[project.optional-dependencies]
+extract = [
+  "pyworld>=0.3.4",
+  "soundfile>=0.12",
+]
+
+[project.scripts]
+cra-extract = "codec_residual_anogan.cli.extract:main"
+cra-train = "codec_residual_anogan.cli.train:main"
+cra-evaluate = "codec_residual_anogan.cli.evaluate:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["anogan_experiment_lib"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

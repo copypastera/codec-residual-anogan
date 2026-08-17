@@ -1,0 +1,41 @@
+{
+  "artifact_schema_version": 1,
+  "checkpoint": {
+    "epoch": 4,
+    "file": "checkpoint.pt",
+    "sha256": "56e754843c9bd1b7ba9593ad6f7b625f5c6d6aec856b83308a4fc32f47b36ec8"
+  },
+  "preprocessor": {
+    "file": "preprocessor.joblib",
+    "fit_rows": 10800,
+    "input_dimension": 512,
+    "kind": "standard",
+    "pca_output_dimension": 287,
+    "pca_requested_variance": 0.98,
+    "sha256": "983f469d5e200c200bdc95a913d39d44d501bea1f58bb540e4ab711121762682"
+  },
+  "model": {
+    "architecture": "conv_baseline",
+    "base_channels": 16,
+    "gan_objective": "bce",
+    "latent_dimension": 100,
+    "spectral_norm_discriminator": true
+  },
+  "anomaly_score": {
+    "component_normalization": "none",
+    "discriminator_feature_weight": 0.5,
+    "reconstruction_loss": "l1",
+    "reconstruction_weight": 0.5,
+    "score_direction": "higher_is_more_anomalous"
+  },
+  "selection": {
+    "eer": 0.21089996857643,
+    "role": "validation",
+    "threshold": 0.7913339138031006
+  },
+  "independent_evaluation": {
+    "auc": 0.8530249199937768,
+    "eer": 0.2264423547320144,
+    "eer_threshold": 0.7781693339347839
+  }
+}

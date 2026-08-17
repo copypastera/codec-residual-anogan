@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.DS_Store
+build/
+dist/
+*.egg-info/
+
+# Local datasets, extracted matrices, and generated runs
+data/
+runs/
+results/
+*.log
+*.tmp
+*.dat
+*.npy
+*.npz
